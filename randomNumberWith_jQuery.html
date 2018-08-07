@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	var maxValue = 101;
+
+    $("#number span").mouseenter(function(){
+        $(this).remove();
+    });
+    $("body").click(function(){
+    	if ($("#number").length) { // check if element exists
+    		var number = parseInt($("#number").text(), 2);
+            if(isNaN(number)) // if no more number go math rand
+            	number = Math.floor(Math.random() * maxValue);
+        	$("#number").text(number%maxValue);
+        	$("#number").css("color","black");
+            $("#number").attr("id","randomNumber");
+        }
+    });
+});
+</script>
+</head>
+<body style="border-style: dotted; border-width: 2px; height: 150px">
+<style type="text/css" scoped>
+  span { color: white; font-size: 220%;} 
+</style>
+<p style="text-align: center;">RandomMouseNumber (Move then click maybe HERE)</p>
+<p id="number" style="color: white; word-break: break-all; text-align: center;">
+<span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span>
+</p>
+</body>
+</html>
